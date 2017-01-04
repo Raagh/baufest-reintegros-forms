@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>3752889f-a47d-4c05-ac9d-7cb28bb9fb5e</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>BaufestReintegros</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ServiceHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\XmlHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Reintegro.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\UserContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SPListsService\ListsReference.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SPUsersService\UsersReference.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Services\SPListsService\Lists.wsdl" />
+    <None Include="$(MSBuildThisFileDirectory)Services\SPListsService\ListsReference.map" />
+    <None Include="$(MSBuildThisFileDirectory)Services\SPUsersService\UserGroup.wsdl" />
+    <None Include="$(MSBuildThisFileDirectory)Services\SPUsersService\UsersReference.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
