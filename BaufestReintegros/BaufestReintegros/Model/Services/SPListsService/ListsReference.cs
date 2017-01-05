@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace BaufestReintegros.Services {
+namespace BaufestReintegros.Model.Services {
     using System;
     using System.Web.Services;
     using System.Diagnostics;

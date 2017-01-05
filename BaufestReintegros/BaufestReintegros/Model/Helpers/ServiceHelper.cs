@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Xml;
-using BaufestReintegros.Services;
+using BaufestReintegros.Model.Services;
 using BaufestReintegros.Model;
 
 
-namespace BaufestReintegros.Helpers
+namespace BaufestReintegros.Model.Helpers
 {
     public static class ServiceHelper
     {

@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 using System.Xml.XPath;
 
 
-namespace BaufestReintegros.Helpers
+namespace BaufestReintegros.Model.Helpers
 {
     public static class XmlHelper
     {
