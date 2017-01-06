@@ -27,10 +27,10 @@ namespace BaufestReintegros.ViewModel
         }
 
 
-        private string username = "pferraggi";
+        private string username;
         private string password;
-        private string maintext = "Baufest Sharepoint Login";
-        private string loginresult;
+        private string maintext = "Baufest Reintegros";
+        private bool isbusy;
 
 
         public string Username
@@ -51,30 +51,37 @@ namespace BaufestReintegros.ViewModel
             get { return maintext; }
             set { maintext = value; }
         }
-        public string LoginResult
+        public bool IsBusy
         {
-            get { return loginresult; }
+            get { return isbusy; }
             set
             {
-                loginresult = value;
+                isbusy = value;
                 OnPropertyChanged();
             }
         }
-
         public Command LoginCommand { get; }
+
 
         async Task Login()
         {
             NetworkCredential credentials = new NetworkCredential();
-
             credentials.UserName = username;
             credentials.Password = password;
             credentials.Domain = "baunet";
+            IsBusy = true;
+
+            await Task.Delay(2000);
 
             var result = ServiceHelper.AuthenticateCredentials(credentials);
 
-            LoginResult = result ? "Logeo Correcto" : "Logeo Incorrecto";
+            IsBusy = false;
 
+            if (result)
+                await Application.Current.MainPage.DisplayAlert("Login", "correct User and/or Password", "OK");
+            else
+                await Application.Current.MainPage.DisplayAlert("Login", "Incorrect User and/or Password", "OK");
+          
         }
     }
 }
