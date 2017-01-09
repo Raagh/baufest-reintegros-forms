@@ -1,3 +1,12 @@
+# Application files
+TestResults
+BaufestReintegros\BaufestReintegros.Droid\bin
+BaufestReintegros\BaufestReintegros.Droid\obj
+BaufestReintegros\BaufestReintegros.IOS\bin
+BaufestReintegros\BaufestReintegros.IOS\obj
+BaufestReintegros\BaufestReintegros.Test\bin
+BaufestReintegros\BaufestReintegros.Test\obj
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

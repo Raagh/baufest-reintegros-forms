@@ -107,7 +107,7 @@ namespace BaufestReintegros.Model.Helpers
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;            
             }

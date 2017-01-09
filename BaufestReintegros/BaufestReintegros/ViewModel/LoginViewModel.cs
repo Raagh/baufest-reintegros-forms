@@ -78,7 +78,7 @@ namespace BaufestReintegros.ViewModel
             IsBusy = false;
 
             if (result)
-                await Application.Current.MainPage.DisplayAlert("Login", "correct User and/or Password", "OK");
+                await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new MainPage());
             else
                 await Application.Current.MainPage.DisplayAlert("Login", "Incorrect User and/or Password", "OK");
           

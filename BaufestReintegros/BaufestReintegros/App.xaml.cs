@@ -13,7 +13,9 @@ namespace BaufestReintegros
 		{
 			InitializeComponent();
 
-			MainPage = new BaufestReintegros.View.Login();
+            NavigationPage nav = new NavigationPage(new View.Login());
+            NavigationPage.SetHasNavigationBar(nav, false);
+            MainPage = nav;
 		}
 
 		protected override void OnStart ()
