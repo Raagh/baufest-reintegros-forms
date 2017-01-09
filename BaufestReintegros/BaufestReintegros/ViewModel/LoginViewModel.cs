@@ -36,10 +36,7 @@ namespace BaufestReintegros.ViewModel
         public string Username
         {
             get { return username; }
-            set
-            {
-                username = value;
-            }
+            set{ username = value; }
         }
         public string Password
         {
@@ -70,9 +67,7 @@ namespace BaufestReintegros.ViewModel
             credentials.Password = password;
             credentials.Domain = "baunet";
             IsBusy = true;
-
-            await Task.Delay(2000);
-
+           
             var result = ServiceHelper.AuthenticateCredentials(credentials);
 
             IsBusy = false;

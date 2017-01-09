@@ -12,6 +12,7 @@
         <Entry Placeholder="Debe Autorizar" Text="{Binding Autorization}" />
         <Button Text="Submit" TextColor="Black" BackgroundColor="White" Command="{Binding SubmitCommand}"/>
 
+        <ActivityIndicator IsRunning="{Binding IsBusy}" />   
 
     </StackLayout>
 
