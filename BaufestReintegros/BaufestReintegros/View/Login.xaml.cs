@@ -14,6 +14,7 @@ namespace BaufestReintegros.View
 		public Login ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = new LoginViewModel();
 		}
 	}

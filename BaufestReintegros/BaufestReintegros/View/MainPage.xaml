@@ -4,8 +4,15 @@
              xmlns:local="clr-namespace:BaufestReintegros"
              x:Class="BaufestReintegros.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout Spacing="20" Padding="20" VerticalOptions="Center">
+        <Entry Placeholder="Titulo" Text="{Binding Title}"/>
+        <Entry Placeholder="Proyecto.Subproyecto.Hito" Text="{Binding Subproject}" />
+        <Entry Placeholder="Importe" Text="{Binding Amount}" />
+        <Entry Placeholder="Cliente/Proyecto" Text="{Binding Client}" />
+        <Entry Placeholder="Debe Autorizar" Text="{Binding Autorization}" />
+        <Button Text="Submit" TextColor="Black" BackgroundColor="White" Command="{Binding SubmitCommand}"/>
+
+
+    </StackLayout>
 
 </ContentPage>

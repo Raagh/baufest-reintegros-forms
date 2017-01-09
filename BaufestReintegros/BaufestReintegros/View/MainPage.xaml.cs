@@ -13,6 +13,7 @@ namespace BaufestReintegros
 		public MainPage()
 		{
 			InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = new MainPageViewModel();
 		}
 	}

@@ -76,9 +76,9 @@ namespace BaufestReintegros.ViewModel
             var result = ServiceHelper.AuthenticateCredentials(credentials);
 
             IsBusy = false;
-
+        
             if (result)
-                await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new MainPage());
+                await Application.Current.MainPage.Navigation.PushAsync(new MainPage());
             else
                 await Application.Current.MainPage.DisplayAlert("Login", "Incorrect User and/or Password", "OK");
           

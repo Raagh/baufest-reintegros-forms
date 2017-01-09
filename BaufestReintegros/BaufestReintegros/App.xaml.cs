@@ -14,7 +14,6 @@ namespace BaufestReintegros
 			InitializeComponent();
 
             NavigationPage nav = new NavigationPage(new View.Login());
-            NavigationPage.SetHasNavigationBar(nav, false);
             MainPage = nav;
 		}
 
