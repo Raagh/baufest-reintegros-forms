@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BaufestReintegros.Model;
+using BaufestReintegros.Model.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -14,6 +16,9 @@ namespace BaufestReintegros.ViewModel
         public MainPageViewModel()
         {
             SubmitCommand = new Command(async () => await Submit());
+            Users = ServiceHelper.GetListUsers().User;
+            SubUnit = ServiceHelper.GetComboChoices("Subunidad").ToArray();
+            Motive = ServiceHelper.GetComboChoices("Motivo_x0020_de_x0020_Solicitud").ToArray();
         }
 
         void OnPropertyChanged([CallerMemberName] string name = "")
@@ -28,16 +33,29 @@ namespace BaufestReintegros.ViewModel
         private string client;
         private string autorization;
         private bool isbusy;
+        private User[] users;
+        private string[] subunit;
+        private string[] motive;
 
         public string Title
         {
             get { return title; }
             set { title = value; }
         }
-        public string Subproject
+        public string[] SubUnit
+        {
+            get { return subunit; }
+            set { subunit = value; }
+        }
+        public string SubProject
         {
             get { return subproject; }
             set { subproject = value; }
+        }
+        public string[] Motive
+        {
+            get { return motive; }
+            set { motive = value; }
         }
         public string Amount
         {
@@ -53,6 +71,11 @@ namespace BaufestReintegros.ViewModel
         {
             get { return autorization; }
             set { autorization = value; }
+        }
+        public User[] Users
+        {
+            get { return users; }
+            set { users = value; }
         }
         public bool IsBusy
         {

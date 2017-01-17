@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\BindablePicker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Helpers\ServiceHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Helpers\XmlHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Reintegro.cs" />

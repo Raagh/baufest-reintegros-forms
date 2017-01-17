@@ -2,18 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BaufestReintegros"
+             xmlns:controls="clr-namespace:BaufestReintegros.Controls"
              x:Class="BaufestReintegros.MainPage">
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <StackLayout Spacing="20" Padding="20" VerticalOptions="Center">
+        
+            <Entry Placeholder="Titulo" Text="{Binding Title}"/>
+            <controls:BindablePicker Title="Persona" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
+            <controls:BindablePicker Title="SubUnidad" ItemsSource="{Binding Path=SubUnit}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
+            <Entry Placeholder="Proyecto.Subproyecto.Hito" Text="{Binding SubProject}" />
+            <controls:BindablePicker Title="Motivo de Solicitud" ItemsSource="{Binding Path=Motive}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
+            <Entry Placeholder="Importe" Text="{Binding Amount}" />
+            <Entry Placeholder="Cliente/Proyecto" Text="{Binding Client}" />
+            <Entry Placeholder="Debe Autorizar" Text="{Binding Autorization}" />
+            <controls:BindablePicker Title="Persona Autorizante" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
+            <Button Text="Submit" TextColor="Black" BackgroundColor="White" Command="{Binding SubmitCommand}"/>
 
-    <StackLayout Spacing="20" Padding="20" VerticalOptions="Center">
-        <Entry Placeholder="Titulo" Text="{Binding Title}"/>
-        <Entry Placeholder="Proyecto.Subproyecto.Hito" Text="{Binding Subproject}" />
-        <Entry Placeholder="Importe" Text="{Binding Amount}" />
-        <Entry Placeholder="Cliente/Proyecto" Text="{Binding Client}" />
-        <Entry Placeholder="Debe Autorizar" Text="{Binding Autorization}" />
-        <Button Text="Submit" TextColor="Black" BackgroundColor="White" Command="{Binding SubmitCommand}"/>
-
-        <ActivityIndicator IsRunning="{Binding IsBusy}" />   
-
-    </StackLayout>
-
+            <ActivityIndicator IsRunning="{Binding IsBusy}" />
+            
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
