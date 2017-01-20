@@ -16,6 +16,7 @@ namespace BaufestReintegros.ViewModel
         public MainPageViewModel()
         {
             SubmitCommand = new Command(async () => await Submit());
+            AttachCommand = new Command(async () => await Attach());
             Users = ServiceHelper.GetListUsers().User;
             SubUnit = ServiceHelper.GetComboChoices("Subunidad").ToArray();
             Motive = ServiceHelper.GetComboChoices("Motivo_x0020_de_x0020_Solicitud").ToArray();
@@ -87,12 +88,18 @@ namespace BaufestReintegros.ViewModel
             }
         }
         public Command SubmitCommand { get; }
+        public Command AttachCommand { get; }
 
         async Task Submit()
         {
             isbusy = true;
             await Task.Delay(3000);
             isbusy = false;
+        }
+
+        async Task Attach()
+        {
+            await Task.Delay(3000);
         }
     }
 }

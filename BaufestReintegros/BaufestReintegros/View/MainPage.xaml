@@ -17,6 +17,7 @@
             <Entry Placeholder="Debe Autorizar" Text="{Binding Autorization}" />
             <controls:BindablePicker Title="Persona Autorizante" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
             <Button Text="Submit" TextColor="Black" BackgroundColor="White" Command="{Binding SubmitCommand}"/>
+            <Button Text="Attach" TextColor="Black" BackgroundColor="White" Command="{Binding AttachCommand}"/>
 
             <ActivityIndicator IsRunning="{Binding IsBusy}" />
             
