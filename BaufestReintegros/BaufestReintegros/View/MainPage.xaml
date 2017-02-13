@@ -8,16 +8,21 @@
         <StackLayout Spacing="20" Padding="20" VerticalOptions="Center">
         
             <Entry Placeholder="Titulo" Text="{Binding Title}"/>
-            <controls:BindablePicker Title="Persona" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
-            <controls:BindablePicker Title="SubUnidad" ItemsSource="{Binding Path=SubUnit}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
+            <controls:BindablePicker Title="Persona" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=SelectedPersona, Mode=TwoWay}" />
+            <controls:BindablePicker Title="SubUnidad" ItemsSource="{Binding Path=SubUnit}" SelectedItem="{Binding Path=SelectedSubUnit, Mode=TwoWay}" />
             <Entry Placeholder="Proyecto.Subproyecto.Hito" Text="{Binding SubProject}" />
-            <controls:BindablePicker Title="Motivo de Solicitud" ItemsSource="{Binding Path=Motive}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
+            <controls:BindablePicker Title="Motivo de Solicitud" ItemsSource="{Binding Path=Motive}" SelectedItem="{Binding Path=SelectedMotive, Mode=TwoWay}" />
             <Entry Placeholder="Importe" Text="{Binding Amount}" />
+            <DatePicker Date="{Binding Date}"></DatePicker>
             <Entry Placeholder="Cliente/Proyecto" Text="{Binding Client}" />
             <Entry Placeholder="Debe Autorizar" Text="{Binding Autorization}" />
-            <controls:BindablePicker Title="Persona Autorizante" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=Person.NextVacationSpot, Mode=TwoWay}" />
-            <Button Text="Submit" TextColor="Black" BackgroundColor="White" Command="{Binding SubmitCommand}"/>
-            <Button Text="Attach" TextColor="Black" BackgroundColor="White" Command="{Binding AttachCommand}"/>
+            <controls:BindablePicker Title="Persona Autorizante" ItemsSource="{Binding Path=Users}" SelectedItem="{Binding Path=SelectedPersonaAutorization, Mode=TwoWay}" />
+
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="Center">             
+              <Button Text="Submit" TextColor="Black" BackgroundColor="White" Command="{Binding SubmitCommand}"/>
+              <Button Text="Attach" TextColor="Black" BackgroundColor="White" Command="{Binding AttachCommand}"/>
+              <Button Text="Reset" TextColor="White" BackgroundColor="Red" Command="{Binding ResetCommand}"/>
+            </StackLayout>
 
             <ActivityIndicator IsRunning="{Binding IsBusy}" />
             

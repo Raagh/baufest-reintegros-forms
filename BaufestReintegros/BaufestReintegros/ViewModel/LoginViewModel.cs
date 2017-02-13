@@ -27,33 +27,33 @@ namespace BaufestReintegros.ViewModel
         }
 
 
-        private string username;
-        private string password;
-        private string maintext = "Baufest Reintegros";
-        private bool isbusy;
+        private string _username;
+        private string _password;
+        private string _maintext = "BAUFEST REINTEGROS";
+        private bool _isbusy;
 
 
         public string Username
         {
-            get { return username; }
-            set{ username = value; }
+            get { return _username; }
+            set{ _username = value; }
         }
         public string Password
         {
-            get { return password; }
-            set { password = value; }
+            get { return _password; }
+            set { _password = value; }
         }
         public string MainText
         {
-            get { return maintext; }
-            set { maintext = value; }
+            get { return _maintext; }
+            set { _maintext = value; }
         }
         public bool IsBusy
         {
-            get { return isbusy; }
+            get { return _isbusy; }
             set
             {
-                isbusy = value;
+                _isbusy = value;
                 OnPropertyChanged();
             }
         }
@@ -63,8 +63,8 @@ namespace BaufestReintegros.ViewModel
         async Task Login()
         {
             NetworkCredential credentials = new NetworkCredential();
-            credentials.UserName = username;
-            credentials.Password = password;
+            credentials.UserName = _username;
+            credentials.Password = _password;
             credentials.Domain = "baunet";
             IsBusy = true;
            

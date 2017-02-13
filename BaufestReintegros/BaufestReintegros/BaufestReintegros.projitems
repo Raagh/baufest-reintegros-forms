@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Reintegro.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Services\SPListsService\ListsReference.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Services\SPUsersService\UsersReference.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SharepointFields.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\UserContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LoginViewModel.cs" />
