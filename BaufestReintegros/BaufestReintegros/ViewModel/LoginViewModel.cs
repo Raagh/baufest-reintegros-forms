@@ -26,13 +26,15 @@ namespace BaufestReintegros.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-
+        #region - Private Properties -
         private string _username;
         private string _password;
         private string _maintext = "BAUFEST REINTEGROS";
         private bool _isbusy;
+        #endregion
 
 
+        #region - Public Properties -
         public string Username
         {
             get { return _username; }
@@ -57,8 +59,10 @@ namespace BaufestReintegros.ViewModel
                 OnPropertyChanged();
             }
         }
-        public Command LoginCommand { get; }
+        #endregion
 
+        #region - Commands -
+        public Command LoginCommand { get; }
 
         async Task Login()
         {
@@ -75,8 +79,10 @@ namespace BaufestReintegros.ViewModel
             if (result)
                 await Application.Current.MainPage.Navigation.PushAsync(new MainPage());
             else
-                await Application.Current.MainPage.DisplayAlert("Login", "Incorrect User and/or Password", "OK");
+                await Application.Current.MainPage.DisplayAlert("Login", "Incorrect User and/or Password.", "OK");
           
         }
+
+        #endregion
     }
 }

@@ -104,7 +104,7 @@ namespace BaufestReintegros.ViewModel
                 OnPropertyChanged();
             }
         }
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Today;
         public string Client
         {
             get { return _client; }
@@ -155,7 +155,7 @@ namespace BaufestReintegros.ViewModel
         {
             if (string.IsNullOrEmpty(_picturepath))
             {
-                await Application.Current.MainPage.DisplayAlert("No picture attached", "You cannot submit without a picture", "OK");
+                await Application.Current.MainPage.DisplayAlert("No picture attached", "You cannot submit without a picture.", "OK");
                 return;
             }
 
@@ -179,11 +179,11 @@ namespace BaufestReintegros.ViewModel
             {
                 ServiceHelper.AttachPicturesToReintegro(reintegroId, _picturepath);
                 ClearFields();
-                await Application.Current.MainPage.DisplayAlert("Reintegro Presentado", "La operacion se realizo exitosamente", "OK");
+                await Application.Current.MainPage.DisplayAlert("Form submittion", "Operation successful.", "OK");
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Reintegro Incorrecto", "An error ocurred", "OK");
+                await Application.Current.MainPage.DisplayAlert("Form submittion", "An error ocurred.", "OK");
             }
                         
             IsBusy = false;
@@ -230,7 +230,7 @@ namespace BaufestReintegros.ViewModel
             SubProject = string.Empty;
             SelectedMotive = null;
             Amount = string.Empty;
-            Date = DateTime.MinValue;
+            Date = DateTime.Today;
             Client = string.Empty;
             Autorization = string.Empty;
             SelectedPersonaAutorization = null;
